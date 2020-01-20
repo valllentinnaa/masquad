@@ -2,9 +2,11 @@ import React from 'react';
 import Movies from './components/Movies';
 import MenuBar from './components/header/MenuBar';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Services from './components/services/Services';
 import Articles from './components/articles/Articles';
 import Testimonials from './components/testiomonials/Testimonials';
+import Contact from './components/contact/Contact';
 import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 
@@ -29,9 +31,11 @@ const Layout = props => (
         <Services/>
         <Articles />
         <Testimonials />
-        <div className="container mt-5">
-            {props.children}
-        </div>
+        <Contact />
+        <Footer />
+        {/*<div className="container mt-5">*/}
+        {/*    {props.children}*/}
+        {/*</div>*/}
     </>
 )
 
