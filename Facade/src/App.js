@@ -3,6 +3,7 @@ import Movies from './components/Movies';
 import MenuBar from './components/header/MenuBar';
 import Header from './components/header/Header';
 import Services from './components/services/Services';
+import Articles from './components/articles/Articles';
 import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 
@@ -25,6 +26,7 @@ const Layout = props => (
         <MenuBar />
         <Header/>
         <Services/>
+        <Articles />
         <div className="container mt-5">
             {props.children}
         </div>

@@ -41,7 +41,11 @@ class Services extends Component {
           return <div key={index} className="col-6 service-wrapper">
               <Media object data-src={service.image} src={service.image} alt={service.title} className="services-icon"></Media>
               <div className="service-title">{service.title}</div>
-              <div className="service-description">{service.description}</div>
+              <div className="row">
+                  <div className="col-md-2"></div>
+                  <div className="col-md-8 service-description">{service.description}</div>
+                  <div className="col-md-2"></div>
+              </div>
           </div>
       });
     };

@@ -28,12 +28,12 @@ class MenuBar extends Component {
     };
 
     render() {
-        return <Navbar color="primary" dark expand="md">
+        return <Navbar color="primary" dark expand="md" className="shadow">
                 <NavLink
                     tag={RRNavLink}
                     className="navbar-brand"
                     exact to="/">
-                        <Media object data-src="../../assets/images/masquad.jpg" src="../../assets/images/masquad.jpg" alt="LOGO"/>
+                        <img src="../../assets/images/masquad.jpg" alt="LOGO"/>
                 </NavLink>
             <NavbarToggler onClick={this.toggleIsOpen} />
             <Collapse isOpen={this.state.isOpen} navbar>

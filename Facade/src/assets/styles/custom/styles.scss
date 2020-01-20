@@ -1,6 +1,13 @@
 .remove-list-item {
     cursor: pointer;
 }
+
+.shadow {
+    -webkit-box-shadow: 2px 4px 12px 5px rgba(56, 0, 61, 0.3);
+    -moz-box-shadow: 2px 4px 12px 5px rgba(56, 0, 61, 0.3);
+    box-shadow: 2px 4px 12px 5px rgba(56, 0, 61, 0.3);
+}
+
 //SHOULD BE IN HEADER>SCSS
 .header-background-image {
     background-image: url("../../images/header.jpg");
@@ -55,3 +62,33 @@
 .service-wrapper {
     padding-bottom: 3rem;
 }
+
+.service-title {
+    color: theme-color("action");
+    font-weight: bolder;
+    padding: 1rem 0;
+}
+
+// ARTICLES
+
+.articles-wrapper {
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #000000;
+}
+
+.articles-heading {
+    padding-top: 2.25rem;
+    padding-bottom: 1.75rem;
+}
+
+
+.article-wrapper {
+    padding: 3rem 0;
+}
+
+.article-title {
+    font-weight: bolder;
+    padding: 1rem 0;
+}
+
