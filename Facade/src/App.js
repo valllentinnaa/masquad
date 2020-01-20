@@ -4,6 +4,7 @@ import MenuBar from './components/header/MenuBar';
 import Header from './components/header/Header';
 import Services from './components/services/Services';
 import Articles from './components/articles/Articles';
+import Testimonials from './components/testiomonials/Testimonials';
 import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 
@@ -27,6 +28,7 @@ const Layout = props => (
         <Header/>
         <Services/>
         <Articles />
+        <Testimonials />
         <div className="container mt-5">
             {props.children}
         </div>

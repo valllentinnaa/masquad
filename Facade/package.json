@@ -42,6 +42,7 @@
     "mini-css-extract-plugin": "0.8.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "owl.carousel": "^2.3.4",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
