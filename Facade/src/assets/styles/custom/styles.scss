@@ -1,0 +1,57 @@
+.remove-list-item {
+    cursor: pointer;
+}
+//SHOULD BE IN HEADER>SCSS
+.header-background-image {
+    background-image: url("../../images/header.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-attachment: fixed;
+    background-color: #f8f6f6;
+    background-size: cover;
+}
+
+.header-text {
+    padding: 3rem;
+    color: #000000;
+}
+
+.font-one-point-five {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.font-two {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.font-three-point-five {
+    font-size: 3.5rem;
+    font-weight: 300;
+    }
+
+.font-four-point-five {
+    font-size: 4.5rem;
+    font-weight: 300;
+}
+
+
+//SHOULD BE IN SERVICES>SCSS
+.services-wrapper {
+    background-color: #000000;
+    text-align: center;
+}
+
+.services-heading {
+    padding-top: 2.25rem;
+    padding-bottom: 1.75rem;
+}
+
+.services-subtitle-keyword {
+    color: theme-color("action");
+}
+
+.service-wrapper {
+    padding-bottom: 3rem;
+}
