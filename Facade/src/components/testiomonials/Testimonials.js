@@ -1,5 +1,22 @@
 import React, { Component } from "react";
-import {Media} from "reactstrap";
+// import Swiper from 'react-id-swiper';
+//
+// const FadeEffect = () => {
+//     const params = {
+//         spaceBetween: 30,
+//         effect: 'fade',
+//         pagination: {
+//             el: '.swiper-pagination',
+//             clickable: true
+//         },
+//         navigation: {
+//             nextEl: '.swiper-button-next',
+//             prevEl: '.swiper-button-prev'
+//         }
+//     }
+// };
+// https://react-id-swiper.ashernguyen.site/example/fade-effect
+
 
 
 class Services extends Component {
@@ -10,22 +27,72 @@ class Services extends Component {
             testimonialsTitle: 'Testimonials',
             testimonialsSubtitle: `Different people, similar opinions -`,
             testimonialsSubtitleKeyword: `WE ARE #1`,
+            testimonials: [
+                {
+                    image: 'http://www.myaffiliatesquad.com/img/casasapostas.jpg',
+                    name: 'Jose',
+                    text: ' - I am really impressed by the service provided by\n' +
+                        '                        the team, they are always so helpful and fast to answer. In a few months my numbers had a really\n' +
+                        '                        nice boost and I now I can see clearly what I was doing wrong before. It\'s amazing how can a\n' +
+                        '                        few changes on your attitude towards marketing practices can produce such a huge impact on your\n' +
+                        '                        income',
+                    companyName: 'Casa de Apostas',
+                    companyLink: 'https://casasdeapostas.info/'
+
+                },
+                {
+                    image: 'http://www.myaffiliatesquad.com/img/casasapostas.jpg',
+                    name: 'Jose',
+                    text: ' - I am really impressed by the service provided by\n' +
+                        '                        the team, they are always so helpful and fast to answer. In a few months my numbers had a really\n' +
+                        '                        nice boost and I now I can see clearly what I was doing wrong before. It\'s amazing how can a\n' +
+                        '                        few changes on your attitude towards marketing practices can produce such a huge impact on your\n' +
+                        '                        income',
+                    companyName: 'Casa de Apostas',
+                    companyLink: 'https://casasdeapostas.info/'
+                },
+                {
+                    image: 'http://www.myaffiliatesquad.com/img/casasapostas.jpg',
+                    name: 'Jose',
+                    text: ' - I am really impressed by the service provided by\n' +
+                        '                        the team, they are always so helpful and fast to answer. In a few months my numbers had a really\n' +
+                        '                        nice boost and I now I can see clearly what I was doing wrong before. It\'s amazing how can a\n' +
+                        '                        few changes on your attitude towards marketing practices can produce such a huge impact on your\n' +
+                        '                        income',
+                    companyName: 'Casa de Apostas',
+                    companyLink: 'https://casasdeapostas.info/'
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                }
+            ]
         }
     }
 
-    // getArticlesItems = () => {
-    //     return this.state.articles.map((article, index) => {
-    //         return <div key={index} className="col-4 article-wrapper">
-    //             <Media object data-src={article.image} src={article.image} alt={article.title} className="services-icon"></Media>
-    //             <div className="article-title">{article.title}</div>
-    //             <div className="row">
-    //                 <div className="col-md-2"></div>
-    //                 <div className="col-md-8 article-description">{article.description}</div>
-    //                 <div className="col-md-2"></div>
-    //             </div>
-    //         </div>
-    //     });
-    // };
+    getTestimonialsItems = () => {
+        return this.state.articles.map((testimonial, index) => {
+            console.log(testimonial);
+            return <div className="testimonial-wrapper">
+                <div className="testimonial-image">
+                    <img src={testimonial.image} alt={testimonial.companyName}/>
+                </div>
+                <div className="testimonial-text">
+                    <span className="testimonial-name">{testimonial.name}</span>
+                    <span>{testimonial.text}</span>
+                </div>
+                <div className="apostrof"></div>
+                <div className="testimonial-company">
+                    <a href={testimonial.companyLink} target="_blank">{testimonial.companyName}</a>
+                </div>
+            </div>
+        });
+    };
 
     render() {
         return <div className="testimonials-wrapper">
@@ -36,11 +103,15 @@ class Services extends Component {
                     <span className="testimonials-subtitle-keywords text-uppercase"> {this.state.testimonialsSubtitleKeyword}</span>
                 </div>
             </div>
-            {/*<div className="services-body">*/}
-            {/*    <div className="row">*/}
-            {/*        {this.getArticlesItems()}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className="testimonials-body">
+                <div className="row">
+                    {/*<Swiper {...params}>*/}
+                    {/*   <div>agd</div>*/}
+                    {/*   <div>fgdf</div>*/}
+                    {/*   <div>dfgds</div>*/}
+                    {/*</Swiper>*/}
+                </div>
+            </div>
         </div>
     }
 }
