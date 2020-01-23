@@ -27,6 +27,7 @@
 }
 
 .carousel-item {
+  background-color: theme-color("primary-dark");
   position: relative;
   display: none;
   float: left;

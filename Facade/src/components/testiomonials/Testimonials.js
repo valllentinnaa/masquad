@@ -109,7 +109,7 @@ class Services extends Component {
                 </div>
             </div>
             <div className="testimonials-body">
-                <div className="row">
+                <div className="row justify-content-center align-items-center">
                  <Carousel />
                 </div>
             </div>
