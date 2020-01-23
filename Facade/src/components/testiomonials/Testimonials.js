@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import { UncontrolledCarousel } from 'reactstrap';
+import Carousel from './Carousel';
 // import Swiper from 'react-id-swiper';
 //
 // const FadeEffect = () => {
@@ -94,6 +96,9 @@ class Services extends Component {
         });
     };
 
+    example = () => <UncontrolledCarousel items={this.state.testimonials} />;
+
+
     render() {
         return <div className="testimonials-wrapper">
             <div className="articles-heading">
@@ -105,11 +110,7 @@ class Services extends Component {
             </div>
             <div className="testimonials-body">
                 <div className="row">
-                    {/*<Swiper {...params}>*/}
-                    {/*   <div>agd</div>*/}
-                    {/*   <div>fgdf</div>*/}
-                    {/*   <div>dfgds</div>*/}
-                    {/*</Swiper>*/}
+                 <Carousel />
                 </div>
             </div>
         </div>

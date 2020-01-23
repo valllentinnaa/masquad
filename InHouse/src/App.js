@@ -1,7 +1,8 @@
 import React from 'react';
 import Movies from './components/Movies';
 import Home from './pages/Home';
-import Layout from './components/layout/Layout'
+import Menu from "./components/menu/Menu";
+import Articles from './components/articles/Articles'
 
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -14,20 +15,34 @@ import {
     Route,
 } from "react-router-dom";
 
+
 const store = createStore(reducers, applyMiddleware(thunk));
 
+const Layout = props => (
+        <div className="row">
+            <div className="col-2">
+                <Menu/>
+            </div>
+            <div className="col-10">
+                {props.children}
+            </div>
+        </div>
+);
 
 const routes = [
     {
         path: '/',
         exact: true,
-        main: () => <Layout />
+        main: () => <Layout>
+            <Articles/>
+        </Layout>
     },
     {
-        path: '/favorite',
+        path: '/articles',
         exact: false,
-        main: () => <Layout/>
-
+        main: () => <Layout>
+            <Articles/>
+        </Layout>
     },
     {
         path: '/gallery',
