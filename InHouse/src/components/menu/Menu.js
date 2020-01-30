@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 
 class Menu extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             optionOne: 'Articles',
@@ -16,13 +16,13 @@ class Menu extends Component {
             <ul className="nav flex-column sidemenu-ul">
                 <li className="nav-item">
                     <a className="nav-link active" href="#">
-                        <i className="fa fa-igloo"></i>
-                       Home
+                        <i className="fa fa-home mr-2"></i>
+                        Home
                     </a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link active" href="#">
-                        <i className="fa fa-newspaper"></i>
+                        <i className="fa fa-newspaper-o mr-2"></i>
                         Articles
                     </a>
                 </li>

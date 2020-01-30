@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import AllArticles from './AllArticles';
+import PostNewArticle from './PostNewArticle';
 
 
 class Articles extends Component {
@@ -16,24 +18,27 @@ class Articles extends Component {
     }
 
     render() {
-        return <div className="row">
-            <div className="col-12">
-                <div className="header">
-                    {this.state.pageTitle}
-                </div>
-                <div className="box">
-                    <div className="box-head">
-                        <div className="box-head-label">
-                            'Post new article'
-                        </div>
-                    </div>
-                    <div className="box-body">
-                        Title:
-                        Text:
+        return <>
+            <div className="row">
+                <div className="col-12">
+                    <div className="header-title">
+                        {this.state.pageTitle}
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="container-max row">
+                <div className="col-12">
+                    <div className="box">
+                        <AllArticles/>
+                    </div>
+                </div>
+                <div className="col-12">
+                    <div className="box">
+                        <PostNewArticle/>
+                    </div>
+                </div>
+            </div>
+        </>
     }
 }
 
