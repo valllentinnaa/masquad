@@ -17,14 +17,14 @@ class Movies extends Component {
             this.props.addFavoriteMovie(movie);
         }
         console.log(this.props.favoriteMovies)
-    }
+    };
 
     getActiveClass = movie => {
         if(this.props.favoriteMovies.findIndex(el => el.id === movie.id) !== -1){
             return "active"
         }
         return ""
-    }
+    };
     getMovieList = () => {
         const movieList = this.props.movies.map(movie => {
             return <li key={movie.id} className="

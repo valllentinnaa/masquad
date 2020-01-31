@@ -1,3 +1,26 @@
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+//TODO scollbar not implementing
+body {
+    &::-webkit-scrollbar-button {
+        display: none
+    }
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+}
+
+
 .header-title {
     margin: 0;
     padding: 2rem 1rem;
@@ -64,6 +87,24 @@
     border-top-right-radius: 4px;
 }
 
+.box-foot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 25px;
+    border-top: 1px solid #ebedf2;
+    min-height: 60px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
 .box-head-label {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -95,11 +136,55 @@
 
 .sidemenu-wrapper {
     background-color: theme-color('primary-dark');
-    height: 100vh;
+    min-height: 100%;
 }
 
 .sidemenu-ul {
     padding-top: 5rem;
     padding-left: 1rem;
     list-style:none;
+}
+
+//articles
+
+.single-article {
+    border: 1px solid #ebedf2;
+    border-radius: 5px;
+}
+
+.single-article-heading {
+    border-bottom: 1px solid #ebedf2;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.single-article-actions{
+    border: 1px solid #ebedf2;
+    border-radius: 5px;
+    padding: .275rem .5rem;
+    cursor: pointer;
+    color: #fd397a;
+    background-color: theme-color("border-light");
+    -webkit-box-shadow: 0 0 13px 0 rgba(82,63,105,.05);
+    box-shadow: 0 0 13px 0 rgba(82,63,105,.05);
+}
+
+.single-article-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 4px;
+    overflow-y: auto;
+}
+
+.article-scroll {
+    max-height: 200px;
+    position: relative;
 }

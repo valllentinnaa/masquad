@@ -1,5 +1,6 @@
 import types from './action-types';
 import networkClient from '../network/network-client';
+import constants from '../constants'
 
 export function setMovies (movies) {
     return {type: types.SET_MOVIES, payload: movies}
@@ -16,6 +17,7 @@ export function removeFavoriteMovie(index){
     return {type: types.REMOVE_FAVORITE_MOVIE, payload: index};
 }
 
+
 export const getMovies = () => async dispatch => {
 
     try {
@@ -27,3 +29,25 @@ export const getMovies = () => async dispatch => {
     }
 
 };
+
+export function setArticles (articles) {
+    return {type: types.SET_ALL_ARTICLES, payload: articles}
+}
+
+export const getArticles = () => async dispatch => {
+    try {
+       const res = await networkClient.get(`${constants.baseURL}/articles`);
+       dispatch(setArticles(res.articles));
+    } catch {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+};
+
+export const removeArticle = (id) => async dispatch => {
+    try {
+        await networkClient.delete(`${constants.baseURL}/articles/${id}`);
+        dispatch(getArticles());
+    } catch(ex) {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+}
