@@ -39,6 +39,9 @@ class Services extends Component {
                     <div className="col-md-8 article-description">{article.description}</div>
                     <div className="col-md-2"></div>
                 </div>
+                <div className="row justify-content-center pt-4">
+                    <button type="button" className="btn btn-outline-primary">Read more</button>
+                </div>
             </div>
         });
     };

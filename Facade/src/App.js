@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Services from './components/services/Services';
 import Articles from './components/articles/Articles';
+import SingleArticle from './components/articles/SingleArticle';
 import Testimonials from './components/testiomonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Home from './pages/Home';
@@ -37,7 +38,17 @@ const Layout = props => (
         {/*    {props.children}*/}
         {/*</div>*/}
     </>
-)
+);
+
+const ArticleLayout = props => (
+    <>
+        <MenuBar />
+        <Header/>
+        <SingleArticle />
+        <Contact />
+        <Footer />
+    </>
+);
 
 const routes = [
     {
@@ -60,8 +71,13 @@ const routes = [
         main: () => <Layout>
             <Movies/>
         </Layout>
+    },
+    {
+        path: '/article/:articleId',
+        exact: false,
+        main: () => <ArticleLayout />
     }
-]
+];
 
 const getRoutes = () => {
     return routes.map((route, index) => {
