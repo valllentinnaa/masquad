@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    width: 100%;
+}
+
 .btn{
     &:focus {
         outline: none !important;
