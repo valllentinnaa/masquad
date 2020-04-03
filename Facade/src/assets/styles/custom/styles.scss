@@ -1,3 +1,12 @@
+.btn{
+    &:focus {
+        outline: none !important;
+    }
+    &:active {
+        outline: none !important;
+    }
+}
+
 .remove-list-item {
     cursor: pointer;
 }
@@ -107,6 +116,23 @@
 .article-title {
     font-weight: bolder;
     padding: 1rem 0;
+}
+
+.articles-img-wrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.articles-img {
+    &:nth-child(1) {
+        background-image: url("../../images/article-img-1.jpg");
+    }
+    &:nth-child(2) {
+        background-image: url("../../images/article-img-2.jpg");
+    }
+    &:nth-child(3) {
+        background-image: url("../../images/article-img-1.jpg");
+    }
 }
 
 // TESTIMONIALS

@@ -1,3 +1,3 @@
 export default {
-    baseURL: ''
+    baseURL: 'https://masquad-backayard.herokuapp.com'
 };

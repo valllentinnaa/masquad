@@ -36,5 +36,19 @@ function error(state = {}, action) {
     }
 }
 
+//mine
+function articles(state = [], action) {
+    switch (action.type) {
+        case types.SET_ALL_ARTICLES: {
+            return [...action.payload];
+        }
+        case types.REMOVE_ARTICLE: {
+            return [...action.payload];
+        }
 
-export default combineReducers({movies, favoriteMovies, error});
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({movies, favoriteMovies, error, articles});

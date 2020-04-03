@@ -1,49 +1,57 @@
 import React, { Component } from "react";
 import {Media} from "reactstrap";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as actions from "../../redux/actions";
+import SingleArticle from "./SingleArticle";
 
 
-class Services extends Component {
+class Articles extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             articlesTitle: 'Useful Articles',
             articlesSubtitle: `Take the EDGE of the iGambling industry`,
-            articles: [
-                {
-                    image: 'http://www.myaffiliatesquad.com/img/cpa-fraud-index.jpg',
-                    title: 'How to detect CPA abuse?',
-                    description: 'We are going to show you how we are finding affiliates who are abusing the CPA commission. An important tutorial to protect wasting money from bad deals.'
-                },
-                {
-                    image: 'http://www.myaffiliatesquad.com/img/mga-vs-curacao.jpg',
-                    title: 'How to detect CPA abuse?',
-                    description: 'We are going to show you how we are finding affiliates who are abusing the CPA commission. An important tutorial to protect wasting money from bad deals.'
-                },
-                {
-                    image: 'http://www.myaffiliatesquad.com/img/cpa-fraud-index.jpg',
-                    title: 'How to detect CPA abuse?',
-                    description: 'We are going to show you how we are finding affiliates who are abusing the CPA commission. An important tutorial to protect wasting money from bad deals.'
-                },
-            ]
+            limit: 3,
+            toggleText: 'More',
+            toggled: false
+        };
+        this.toggleLoad = this.toggleLoad.bind(this);
+    }
+
+    toggleLoad () {
+        //If you press on 'More'
+        if (this.state.toggled === false) {
+            this.setState({
+                limit: 10,
+                toggleText: 'Less',
+                toggled: !this.state.toggled
+            });
+        } else {
+            //If you press on 'Less'
+            this.setState({
+                limit: 3,
+                toggleText: 'More',
+                toggle: !this.state.toggled
+            });
         }
     }
 
+    componentDidMount() {
+        this.props.getArticles();
+    }
+
     getArticlesItems = () => {
-        return this.state.articles.map((article, index) => {
-            return <div key={index} className="col-4 article-wrapper">
-                <Media object data-src={article.image} src={article.image} alt={article.title} className="services-icon"></Media>
-                <div className="article-title">{article.title}</div>
-                <div className="row">
-                    <div className="col-md-2"></div>
-                    <div className="col-md-8 article-description">{article.description}</div>
-                    <div className="col-md-2"></div>
-                </div>
-                <div className="row justify-content-center pt-4">
-                    <button type="button" className="btn btn-outline-primary">Read more</button>
-                </div>
-            </div>
-        });
+        if (this.props.articles.length) {
+            return this.props.articles
+                .slice(0, this.state.limit)
+                .map((article) => {
+                return <SingleArticle id={article._id} title={article.title} text={article.text}/>
+            });
+        } else {
+            return <div className="p-3 text-info">No articles found!</div>
+        }
     };
 
     render() {
@@ -54,13 +62,34 @@ class Services extends Component {
                     {this.state.articlesSubtitle}
                 </div>
             </div>
-            <div className="services-body">
+            <div className="articles-body">
                 <div className="row">
                     {this.getArticlesItems()}
+                </div>
+                <div>
+                    <button
+                        type="button"
+                        className="btn btn-outline-primary btn-block"
+                        onClick={this.toggleLoad}
+                    >
+                        Load {this.state.toggleText}</button>
                 </div>
             </div>
         </div>
     }
 }
 
-export default Services;
+const mapStateToProps = state => {
+    return {
+        articles: state.articles
+    }
+};
+
+const mapStateToDispatch = dispatch => {
+    return bindActionCreators({
+        setArticles: actions.setArticles,
+        getArticles: actions.getArticles
+    }, dispatch)
+};
+
+export default connect(mapStateToProps, mapStateToDispatch)(Articles);

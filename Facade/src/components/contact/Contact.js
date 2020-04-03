@@ -36,7 +36,7 @@ class Contact extends Component {
                     </FormGroup>
                     <FormGroup className="form-group">
                         <Label for="purpose">Purpose of the call</Label>
-                        <Input type="select" lassName="form-control" id="someId4" name="purpose" required="">
+                        <Input type="select" className="form-control" id="someId4" name="purpose" required="">
                             <option>Affiliate Outsourcing</option>
                             <option>Market Consultation</option>
                             <option>Affiliate Support</option>
