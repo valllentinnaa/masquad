@@ -51,4 +51,15 @@ function articles(state = [], action) {
     }
 }
 
-export default combineReducers({movies, favoriteMovies, error, articles});
+function article(state = [], action) {
+    switch (action.type) {
+        case types.SET_ARTICLE: {
+            return {...action.payload};
+        }
+
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({movies, favoriteMovies, error, articles, article});

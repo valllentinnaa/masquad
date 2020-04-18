@@ -1,0 +1,85 @@
+.carousel-container {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @media (max-width: 475px) {
+    .carousel-slide {
+      .item {
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+.carousel-slide {
+  display: flex;
+  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
+
+  .carousel-items-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    .item {
+      min-width: 33.3%;
+      margin: 0 5px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.testimonials-body {
+
+  .prevBtn {
+    color: red;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    left: 2%;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .nextBtn {
+    color: red;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    right: 2%;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+/*
+.prevBtn-icon {
+  color: var(--color-alpha);
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  left: 2%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}*/
+
+/*
+
+.nextBtn {
+  color: red;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  right: 2%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}*/

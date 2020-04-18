@@ -1,27 +1,12 @@
 import React, { Component, useState } from "react";
-import { UncontrolledCarousel } from 'reactstrap';
-import Carousel from './Carousel';
-// import Swiper from 'react-id-swiper';
-//
-// const FadeEffect = () => {
-//     const params = {
-//         spaceBetween: 30,
-//         effect: 'fade',
-//         pagination: {
-//             el: '.swiper-pagination',
-//             clickable: true
-//         },
-//         navigation: {
-//             nextEl: '.swiper-button-next',
-//             prevEl: '.swiper-button-prev'
-//         }
-//     }
-// };
-// https://react-id-swiper.ashernguyen.site/example/fade-effect
-
+import createCarousel from "./carousel/carousel";
 
 
 class Services extends Component {
+
+    componentDidMount() {
+        createCarousel();
+    }
 
     constructor(props){
         super(props);
@@ -64,23 +49,18 @@ class Services extends Component {
                     companyName: 'Casa de Apostas',
                     companyLink: 'https://casasdeapostas.info/'
                 },
-                {
-
-                },
-                {
-
-                },
-                {
-
-                }
             ]
         }
     }
 
     getTestimonialsItems = () => {
-        return this.state.articles.map((testimonial, index) => {
-            console.log(testimonial);
-            return <div className="testimonial-wrapper">
+        for(let i = 0; i < 5; i++) {
+            return <div className="testimonials-item item">{`item ${i}`}</div>
+        }
+
+        /*return this.state.articles.map((testimonial, index) => {
+            debugger
+            return <div className="testimonial-wrapper item">
                 <div className="testimonial-image">
                     <img src={testimonial.image} alt={testimonial.companyName}/>
                 </div>
@@ -93,10 +73,9 @@ class Services extends Component {
                     <a href={testimonial.companyLink} target="_blank">{testimonial.companyName}</a>
                 </div>
             </div>
-        });
+        });*/
     };
 
-    example = () => <UncontrolledCarousel items={this.state.testimonials} />;
 
 
     render() {
@@ -110,7 +89,13 @@ class Services extends Component {
             </div>
             <div className="testimonials-body">
                 <div className="row justify-content-center align-items-center">
-                 <Carousel />
+                 <div className="prevBtn prev-btn h1">levo</div>
+                 <div className="nextBtn next-btn h1">desno</div>
+                    <div className="carousel-slide carouselSlide">
+                        <div className="carousel-items-container">
+                            {this.getTestimonialsItems()}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

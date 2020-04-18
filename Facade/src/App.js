@@ -5,7 +5,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Services from './components/services/Services';
 import Articles from './components/articles/Articles';
-import SingleArticle from './components/articles/SingleArticle';
+import SingleArticlePage from "./components/articles/SingleArticlePage";
 import Testimonials from './components/testiomonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Home from './pages/Home';
@@ -43,9 +43,7 @@ const Layout = props => (
 const ArticleLayout = props => (
     <>
         <MenuBar />
-        <Header/>
-        <SingleArticle />
-        <Contact />
+        <SingleArticlePage />
         <Footer />
     </>
 );
@@ -73,7 +71,7 @@ const routes = [
         </Layout>
     },
     {
-        path: '/article/:articleId',
+        path: '/articles/:articleId',
         exact: false,
         main: () => <ArticleLayout />
     }
@@ -88,7 +86,7 @@ const getRoutes = () => {
             {route.main}
         </Route>
     })
-}
+};
 
 function App() {
     return <Provider store={store}>

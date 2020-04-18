@@ -1,3 +1,5 @@
+@import './carousel.scss';
+
 body {
     margin: 0;
     width: 100%;
@@ -123,6 +125,8 @@ body {
     padding: 1rem 0;
 }
 
+
+
 .articles-img-wrapper {
     width: 50px;
     height: 50px;
@@ -159,6 +163,12 @@ body {
 .testimonials-subtitle-keywords {
     color: theme-color("action");
     font-weight: bolder;
+}
+
+.testimonials-item {
+    width: 500px;
+    height: 400px;
+    background-color: #0abb87;
 }
 
 // CONTACTS
@@ -218,5 +228,18 @@ body {
 
 .single-article-wrapper {
     background-color: #ffffff;
+    color: #343A40;
+}
+
+//single article page
+.article-page-title {
+    font-weight: bolder;
+    padding: 1rem 0;
+    color: #38003D;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.article-page-description {
     color: #343A40;
 }

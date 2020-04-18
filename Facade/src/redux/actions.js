@@ -16,6 +16,20 @@ export const getArticles = () => async dispatch => {
     }
 };
 
+export function setArticle (article) {
+    return {type: types.SET_ARTICLE, payload: article}
+}
+
+export const getArticle = (articleId) => async dispatch => {
+    try {
+        const res = await networkClient.get(`${constants.baseURL}/articles/${articleId}`);
+        dispatch(setArticle(res.article));
+    } catch {
+        dispatch(setError({message: 'There was an error!'}))
+    }
+};
+
+//tutorial
 export function setMovies (movies) {
     return {type: types.SET_MOVIES, payload: movies}
 }

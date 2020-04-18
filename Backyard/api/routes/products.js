@@ -37,7 +37,7 @@ const Product = require('../models/product');
 
 router.get('/', ProductsController.productsGetAll);
 
-router.post('/', checkAuth, upload.single('productImage'), ProductsController.productsCreate);
+router.post('/', upload.single('productImage'), ProductsController.productsCreate);
 
 router.get('/:productId', ProductsController.productsGetProduct);
 

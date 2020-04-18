@@ -47,7 +47,7 @@ class Articles extends Component {
             return this.props.articles
                 .slice(0, this.state.limit)
                 .map((article) => {
-                return <SingleArticle id={article._id} title={article.title} text={article.text}/>
+                return <SingleArticle key={article._id} id={article._id} title={article.title} text={article.text}/>
             });
         } else {
             return <div className="p-3 text-info">No articles found!</div>
