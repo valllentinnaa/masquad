@@ -8,6 +8,7 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 const articleRoutes = require('./api/routes/articles');
+const merchRoutes = require('./api/routes/merch');
 
 mongoose.connect('mongodb+srv://masquad:0Zitgy3Hbc4muoXJ@masquad-8grnl.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
@@ -35,6 +36,7 @@ app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/articles', articleRoutes);
+app.use('/merch', merchRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
